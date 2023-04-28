@@ -1,24 +1,24 @@
-#include <stdio.h>
 #include "lists.h"
 
 /**
- * print_list - Prints a list of integers
+ * print_list - prints all the elements of a list_t list.
  *
- * @list: The list to be printed
+ * @h: const list_t *h
+ *
+ * Return: size_t
  */
-
-void print_list(const listint_t *list)
+size_t print_list(const list_t *h)
 {
-	int i;
+	size_t node = 0;
 
-	i = 0;
-	while (list)
+	while (h != NULL)
 	{
-		if (i > 0)
-			printf(", ");
-		printf("%d", list->n);
-		++i;
-		list = list->next;
+		if (h->str == NULL)
+			printf("[%d] %s\n", 0, "(nil)");
+		else
+			printf("[%d] %s\n", h->len, h->str);
+		h = h->next;
+		node++;
 	}
-	printf("\n");
+	return (node);
 }
