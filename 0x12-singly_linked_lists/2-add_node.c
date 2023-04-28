@@ -4,7 +4,6 @@
  * add_node - Entry point
  *
  * @head: pointer of pointer
- *
  * @str: pointer
  *
  * Return: size of list
